@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<meta charset="utf-8">
+	
+	<title>Tag, the jQuery plugin to edit tags</title>
+	
+	<link href="tag.ico" rel="shortcut icon">
+	
+	<meta name="author" content="Georges Duverger">
+	<meta name="description" content="Tag, the jQuery plugin to edit tags">
+	<meta name="keywords" content="tag, jquery, plugin, edit, tags, tag cloud, tagcloud">
+	
+	<link rel="stylesheet" href="http://yui.yahooapis.com/2.8.1/build/reset/reset-min.css">
+	<link rel="stylesheet" href="tag.css">
+	<link rel="stylesheet" href="style.css">
+	
+</head>
+<body>
+	
+	<h1><img src="img/label.png"> Tag</h1>
+	
+	<h2>The jQuery plugin to edit tags</h2>
+	
+	<!-- DEMO -->
+	<div class="demo">
+		
+		<ul class="tags">
+			<li>Aggregators</li>
+			<li>Wikis</li>
+			<li>Folksonomy</li>
+			<li>User Centered</li>
+			<li>Joy of Use</li>
+			<li>Blogs</li>
+			<li>Participation</li>
+			<li>Six Degrees</li>
+			<li>Usability</li>
+			<li>Widgets</li>
+			<li>Pagerank</li>
+			<li>XFN</li>
+			<li>Social Software</li>
+			<li>FOAF</li>
+			<li>Recommendation</li>
+			<li>Sharing</li>
+			<li>Collaboration</li>
+			<li>Perpetual Beta</li>
+			<li>Simplicity</li>
+			<li>Browser</li>
+			<li>Videocasting</li>
+			<li>Podcasting</li>
+			<li>AJAX</li>
+			<li>Audio</li>
+			<li>IM</li>
+			<li>Video</li>
+			<li>Design</li>
+			<li>Convergence</li>
+			<li>Web 2.0</li>
+			<li>CSS</li>
+			<li>Pay Per Click</li>
+			<li>UMTS</li>
+			<li>Mobility</li>
+			<li>Atom</li>
+			<li>XHTML</li>
+			<li>SVG</li>
+			<li>Ruby on Rails</li>
+			<li>VC</li>
+			<li>Trust</li>
+			<li>Affiliation</li>
+			<li>OpenAPIs</li>
+			<li>RSS</li>
+			<li>Semantic</li>
+			<li>Web Standards</li>
+			<li>SEO</li>
+			<li>Economy</li>
+			<li>OpenID</li>
+			<li>Remixability</li>
+			<li>REST</li>
+			<li>Standardization</li>
+			<li>The Long Tail</li>
+			<li>DataDriven</li>
+			<li>Accessibility</li>
+			<li>XML</li>
+			<li>Modularity</li>
+			<li>SOAP</li>
+			<li>Microformats</li>
+			<li>Syndication</li>
+		</ul>
+		
+		<a href="#" class="sprite edit-tags">Edit tags</a>
+		
+	</div>
+	
+	<!-- STYLE -->
+	<div class="styles">
+		
+		<h3>Customizable style <span class="quiet">(try it below!)</span></h3>
+		
+		<!-- Flickr -->
+		<div class="style">
+			<h4 class="flickr">Flickr style</h4>
+			<iframe src="demo/flickr.html"></iframe>
+		</div>
+		
+		<!-- Quora -->
+		<div class="style middle">
+			<h4 class="quora">Quora style</h4>
+			<iframe src="demo/quora.html"></iframe>
+		</div>
+		
+		<!-- Hunch -->
+		<div class="style">
+			<div class="quiet" style="float:right">noDelete: true</div>
+			<h4 class="hunch">Hunch style</h4>
+			<iframe src="demo/hunch.html"></iframe>
+		</div>
+		
+	</div>
+	
+	<div style="clear:left"></div>
+	
+	<!-- CODE -->
+	<div class="code">
+		
+		<h3>Unobtrusive scripting</h3>
+		
+<pre>
+<span class="comment">&lt;!-- Loads jQuery (through Google CDN) --&gt;</span>
+<span class="element">&lt;script <span class="attr-name">src=</span><span class="attr-value">"http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"</span>&gt;&lt;/script&gt;</span>
+
+<span class="comment">&lt;!-- Loads the Tag script --&gt;</span>
+<span class="element">&lt;script <span class="attr-name">src=</span><span class="attr-value">"http://simplicityengineer.com/tag/jquery.tag.js"</span>&gt;&lt;/script&gt;</span>
+
+<span class="comment">&lt;!-- Loads the Tag style sheet (or make your own!) --&gt;</span>
+<span class="element">&lt;link <span class="attr-name">rel=</span><span class="attr-value">"stylesheet"</span> <span class="attr-name">href=</span><span class="attr-value">"http://simplicityengineer.com/tag/tag.css"</span>&gt;</span>
+
+<span class="comment">&lt;!-- Generate your list of existing tags --&gt;</span>
+<span class="element">&lt;ul <span class="attr-name">class=</span><span class="attr-value">"tags"</span>&gt;
+  <span class="element">&lt;li&gt;<span class="value">Aggregators</span>&lt;/li&gt;</span>
+  <span class="element">&lt;li&gt;<span class="value">Wikis</span>&lt;/li&gt;</span>
+&lt;/ul&gt;</span>
+
+<span class="comment">&lt;!-- Binds tag editing; fallback in case JavaScript is disabled --&gt;</span>
+<span class="element">&lt;a <span class="attr-name">href=</span><span class="attr-value">"editTags.html"</span> <span class="attr-name">class=</span><span class="attr-value">"edit-tags"</span>&gt;<span class="value">Edit tags</span>&lt;/a&gt;</span>
+
+<span class="element js">&lt;script&gt;
+  $(<span class="param">document</span>).ready(function() {
+    <span class="comment">// Binds the tag container (has to be the first parent)</span>
+    $(<span class="attr-value">".tags"</span>)<span class="function">.<em>tag</em></span>({
+      <span class="comment">// Defines how new tags are formed</span>
+      <span class="attr-name">tagTemplate:</span> <span class="attr-value">"&lt;li&gt;"</span>,
+      <span class="comment">// Defines what triggers the edit mode</span>
+      <span class="attr-name">editTagsSelector:</span> <span class="attr-value">".edit-tags"</span>,
+      <span class="comment">// Called when a tag is saved</span>
+      <span class="attr-name">saveTagCallback:</span> <span class="function">function( <span class="param">tag</span> )</span> {
+        <span class="comment">// AJAX call to update the tag on your server</span>
+        return <span class="constant">true</span>;
+      },
+      <span class="comment">// Called when a tag is removed</span>
+      <span class="attr-name">removeTagCallback:</span> function( <span class="param">tag</span> ) {
+        <span class="comment">// AJAX call to remove the tag from your server</span>
+        return <span class="constant">true</span>;
+      }
+    });
+  });
+&lt;/script&gt;</span>
+</pre>
+	
+	</div>
+	
+	<p>Try <a href="jquery.tag.js">jquery.tag.js</a> (with <a href="tag.css">tag.css</a> and <a href="tag.png">tag.png</a>) and send feedback or questions to <a href="http://twitter.com/georgesduverger">@georgesduverger</a></p>
+	
+	<div class="footnote">Icons by <a href="http://pixel-mixer.com">pixel-mixer.com</a></div>
+	
+	<!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+	<!-- http://html5boilerplate.com/ -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script>!window.jQuery && document.write('<script src="jquery-1.4.2.min.js"><\/script>')</script>
+	
+	<script src="jquery.tag.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script>
+	// usage: log('inside coolFunc',this,arguments);
+	// paulirish.com/2009/log-a-lightweight-wrapper-for-consolelog/
+	window.log = function(){
+		log.history = log.history || [];   // store logs to an array for reference
+		log.history.push(arguments);
+		if(this.console){
+			console.log( Array.prototype.slice.call(arguments) );
+		}
+	};
+	
+	$(document).ready(function() {
+		$(".tags").tag({
+			tagTemplate: "<li>",
+			editTagsSelector: ".edit-tags",
+			doneEditingElement: "<a href='#' class='sprite done-editing'>Done editing</a>",
+			removeElement: "<a href='#' class='sprite remove-tag' title='Remove'>Remove</a>",
+			addElement: "<a href='#' class='sprite add-tag' title='Add'>Add</a>",
+			saveTagCallback: function( tag ) {
+				// var tags_string;
+				// $(tags).each(function() { tags_string += this.newValue ? this.newValue + "," : this.oldValue + ","; });
+				log( "SAVE: " + tag.newValue); // + ", tags: " + tags_string );
+				return true;
+			},
+			removeTagCallback: function( tag ) {
+				// var tags_string;
+				// $(tags).each(function() { tags_string += this.newValue ? this.newValue + "," : this.oldValue + ","; })
+				log( "REMOVE: " + tag.oldValue); // + ", tags: " + tags_string );
+				return true; 
+			}
+		});
+	});
+	</script>
+	
+</body>
+</html>

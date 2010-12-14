@@ -1,0 +1,84 @@
+ul.tags li {
+	background-color: #FFC200;
+	font-size: 1em;
+	line-height: 1.5em;
+	display: inline-block;
+	position: relative;
+	margin-left: .5em;
+	padding: 0 .5em;
+	border-radius:  0 5px 5px 0;
+	-moz-border-radius: 0 5px 5px 0;
+	-webkit-border-radius: 0 5px 5px 0;
+}
+
+ul.tags li:before {
+	content: " ";
+	display: block;
+	position: absolute;
+	left: -.5em;
+	border-color: transparent #FFC200 transparent transparent;
+	border-style: solid;
+	border-width: .75em .5em .75em 0;
+	float: left;
+	height: 0;
+	width: 0;
+}
+
+ul.tags li.edit-mode {
+	margin-left: 0;
+	border-radius:  5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+}
+
+ul.tags li.edit-mode:before {
+	content: "";
+	border: none;
+}
+
+ul.tags li a {
+	text-decoration: none;
+}
+
+ul.tags li,
+ul.tags li .tag-value {
+	font-size: 1em;
+	line-height: 1.5em;
+	display: inline-block;
+}
+
+.remove-tag,
+.add-tag {
+	color: #999;
+	font-size: 0.8em;
+	text-decoration: none;
+	cursor: pointer;
+	margin-left: .5em;
+	display: inline-block;
+	text-indent: 16px;
+	overflow: hidden;
+	height: 16px;
+	width: 16px;
+	vertical-align: -10%;
+}
+
+.remove-tag img,
+.add-tag img {
+	vertical-align: text-bottom;
+}
+
+.tag-input {
+	font-size: 1em;
+	height: 1.5em;
+	padding: 0;
+	margin-left: -1px;
+	font-family: inherit;
+	background-color: #FFC200;
+	border: none;
+}
+
+.sprite { background: url("http://simplicityengineer.com/tag/tag.png") no-repeat top left; }
+.remove-tag { background-position: 0 0; width: 16px; height: 16px; } 
+.edit-tags { background-position: 0 -66px; width: 16px; height: 16px; padding-left: 1.5em; }
+.add-tag { background-position: 0 -132px; width: 16px; height: 16px; } 
+.done-editing{ background-position: 0 -198px; width: 16px; height: 16px; padding-left: 1.5em; }

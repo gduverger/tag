@@ -1,0 +1,128 @@
+html { background-color: #fff; }
+
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, default;
+	font-size: 80%;
+	color: #333333;
+	margin: 1.5em;
+}
+
+a {
+	text-decoration: none;
+	display: inline-block;
+	color:#19558D;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.tag a {
+	color:#19558D;
+	padding: 0 0.4em;
+	line-height: 1.5em;
+	background-color:#DFEAF4;
+	-moz-border-radius: 3px 3px 3px 3px;
+	-webkit-border-radius: 3px 3px 3px 3px;
+}
+
+.edit-mode a {
+	-moz-border-radius: 3px 0 0 3px;
+	-webkit-border-radius: 3px 0 0 3px;
+}
+
+.tag {
+	margin:0 3px 3px 0;
+	float: left;
+}
+
+.edit-mode .topic-remove:hover,
+.tag a:hover {
+	text-decoration: none;
+	background-color:#19558D;
+	color: white;
+}
+
+.edit-mode a:hover {
+	background-color: #DFEAF4;
+	color: #19558D;
+}
+
+.edit-tags {
+	margin-top:1px;
+	color:#999999;
+	background:url("http://d1vgw4v7ja2ido.cloudfront.net/-ff3fdecfc5084edb.gif") no-repeat scroll left center transparent;
+	font-size:11px;
+	font-weight:normal;
+	letter-spacing:0;
+	margin-left:3px;
+	padding:2px 6px 1px 18px;
+	float: left;
+	-moz-border-radius:2px 2px 2px 2px;
+	-webkit-border-radius:2px 2px 2px 2px;
+}
+
+.edit-tags:hover {
+	background-image:url("http://d1vgw4v7ja2ido.cloudfront.net/-87741c129f8d575c.gif");
+	color:#FFFFFF;
+	text-decoration:none;
+	color:#405A04;
+	background-color:#D1E1AD;
+}
+
+.topic-remove {
+	background-image: url("http://d1vgw4v7ja2ido.cloudfront.net/-cb37d20c01aaacf4.gif");
+	float: right;
+	width: 15px;
+	background-position: center 3px;
+	background-repeat: no-repeat;
+	height: 19px;
+	color: #19558D;
+	margin-left: -.4em;
+	-moz-border-radius: 0 2px 2px 0 !important;
+	-webkit-border-radius: 0 2px 2px 0 !important;
+}
+
+.topic-remove:hover {
+	background-position: center -13px;
+	text-decoration: none;
+	color: #ffffff;
+}
+
+.done {
+	font-weight: bold;
+	padding: 0 0.4em;
+	line-height: 1.7em;
+	float: left;
+}
+
+input.add {
+	-moz-border-radius:3px 3px 3px 3px;
+	background:url("http://d1vgw4v7ja2ido.cloudfront.net/-b44d0948a4b53532.gif") repeat-x scroll left top #D8D8D8;
+	border-style:solid;
+	border-width:1px;
+	cursor:pointer;
+	display:inline-block;
+	font-size:0.9em;
+	font-weight:bold;
+	padding:3px 10px;
+	text-align:center;
+	background-color:#19558D;
+	background-image:url("http://d1vgw4v7ja2ido.cloudfront.net/-41e275823bd81cd6.gif");
+	border-bottom:1px solid #062C50;
+	border-color:#19558D #19558D #062C50;
+	color:#FFFFFF;
+	min-width:40px;
+	text-shadow:0 -1px #19558D;
+	margin-left:3px;
+}
+
+input {
+	border-color:#999999 #999999 #888888;
+	font-family: Helvetica,Arial,default;
+	border-style:solid;
+	border-width:1px;
+	float:left;
+	font-size:13px;
+	padding:3px;
+}

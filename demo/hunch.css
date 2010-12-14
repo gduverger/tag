@@ -1,0 +1,61 @@
+html { background-color: #fff; }
+
+body {
+	color: #333333;
+	font: 13px/18px helvetica,arial,hirakakupro-w3,osaka,"ms pgothic",sans-serif;
+	margin: 1.5em;
+}
+
+.header {
+	background:url("http://aka-img-1.h-img.com/media/css/base/sprite-v8.png") repeat-x scroll 0 -975px transparent;
+	height:18px;
+	padding-bottom:18px;
+	position:relative;
+	width:100%;
+}
+
+h3 {
+	margin-right:10px;
+	float:left;
+	font-size:15px;
+	font-weight:bold;
+}
+
+a {
+	-moz-border-radius:2px 2px 2px 2px;
+	background-repeat:no-repeat;
+	color:#1A6A96;
+	text-decoration:none;
+}
+
+a:hover {
+	background-color:#D1E1EA;
+	color:#004B73;
+}
+
+.tags a {
+	font-weight:bold;
+}
+
+.tag:after { content: ","; }
+.last:after, .add-mode:after { content: ""; }
+
+.tag { float: left; margin-right: .5em; line-height: 1.5em; }
+
+.edit-tags,
+.done-editing {
+	margin-left:10px;
+	float:right;
+	padding:0 5px;
+	display:inline-block;
+	margin:0 -3px;
+	padding:0 3px;
+	-moz-border-radius:2px 2px 2px 2px;
+	background-repeat:no-repeat;
+	color:#1A6A96;
+	text-decoration:none;
+}
+
+.remove-tag { background-color:#D1E1EA; color:#004B73; margin: 0 0 0 .1em; padding: 0 .25em; }
+.remove-tag:hover { background-color: #cc0000; color: #fff; }
+.add { margin-left: 4px !important; padding: 3px; }

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<meta charset="utf-8">
+	
+	<title>Quora style demo of Tag</title>
+	
+	<link href="../tag.ico" rel="shortcut icon">
+
+	<meta name="author" content="Georges Duverger">
+	<meta name="description" content="Flickr style demo of Tag">
+	<meta name="keywords" content="quora, style, demo, tag, jquery, plugin, edit, tags, tag cloud, tagcloud">
+	
+	<link rel="stylesheet" href="http://yui.yahooapis.com/2.8.1/build/reset/reset-min.css">
+	<link rel="stylesheet" href="quora.css">
+	
+</head>
+<body>
+	
+	<div class="tags">
+		<span class="tag"><a href="#">Aggregators</a></span>
+		<span class="tag"><a href="#">Wikis</a></span>
+		<span class="tag"><a href="#">Folksonomy</a></span>
+		<span class="tag"><a href="#">User Centered</a></span>
+		<span class="tag"><a href="#">Joy of Use</a></span>
+		<span class="tag"><a href="#">Blogs</a></span>
+		<span class="tag"><a href="#">Participation</a></span>
+		<span class="tag"><a href="#">Six Degrees</a></span>
+		<span class="tag"><a href="#">Usability</a></span>
+		<span class="tag"><a href="#">Widgets</a></span>
+	</div>
+	<a href="#" class="edit-tags">Edit</a>
+	
+	<!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+	<!-- http://html5boilerplate.com/ -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script>!window.jQuery && document.write('<script src="jquery-1.4.2.min.js"><\/script>')</script>
+	
+	<script src="../jquery.tag.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script>
+	$(document).ready(function() {
+		$(".tags").tag({
+			tagTemplate: "<span class='tag'>",
+			editTagsSelector: ".edit-tags",
+			doneEditingElement: "<a href='#' class='done'>Done</a>",
+			removeElement: "<a href='#' class='topic-remove'></a>",
+			addElement: "<input type='submit' value='Add' class='add'>",
+			saveTagCallback: function( tag ) { tag.valueElement.wrap("<a href='#'>"); return true; },
+			removeTagCallback: function( tag ) { return true; }
+		});
+	});
+	</script>
+	
+</body>
+</html>

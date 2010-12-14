@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<meta charset="utf-8">
+	
+	<title>Flickr style demo of Tag</title>
+	
+	<link href="../tag.ico" rel="shortcut icon">
+	
+	<meta name="author" content="Georges Duverger">	
+	<meta name="description" content="Flickr style demo of Tag">
+	<meta name="keywords" content="flickr, style, demo, tag, jquery, plugin, edit, tags, tag cloud, tagcloud">
+	
+	<link rel="stylesheet" href="http://yui.yahooapis.com/2.8.1/build/reset/reset-min.css">
+	<link rel="stylesheet" href="flickr.css">
+	
+</head>
+<body>
+	
+	<h4>
+		Tags
+		<small>
+			(<a class="edit-tags" href="">edit tags</a>)
+		</small>
+	</h4>
+	
+	<ul class="tags">
+		<li><a href="">aggregators</a></li>
+		<li><a href="#">wikis</a></li>
+		<li><a href="#">folksonomy</a></li>
+		<li><a href="#">user centered</a></li>
+		<li><a href="#">joy of use</a></li>
+		<li><a href="#">blogs</a></li>
+		<li><a href="#">participation</a></li>
+		<li><a href="#">six degrees</a></li>
+		<li><a href="#">usability</a></li>
+		<li class="last"><a href="#">widgets</a></li>
+	</ul>
+	
+	<!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+	<!-- http://html5boilerplate.com/ -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script>!window.jQuery && document.write('<script src="jquery-1.4.2.min.js"><\/script>')</script>
+	
+	<script src="../jquery.tag.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script>
+	$(document).ready(function() {
+		$(".tags").tag({
+			tagTemplate: "<li>",
+			editTagsSelector: ".edit-tags",
+			doneEditingElement: "<a href='#'>done editing</a>",
+			removeElement: "<a class='delete-tag' title='Delete this tag?' href='#'><span>[x]</span></a>",
+			saveTagCallback: function( tag ) { tag.valueElement.wrap("<a href='#'>"); $(".tags li").removeClass( "last" ); $(tag).addClass( "last" ); return true; },
+			removeTagCallback: function( tag ) { return true; }
+		});
+	});
+	</script>
+	
+</body>
+</html>

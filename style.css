@@ -1,0 +1,34 @@
+html { background-color: #eee; color: #333; -webkit-font-smoothing: antialiased; }
+body { font-size: 16px; line-height: 1.5; /* 24px */ font-family: "Helvetica Neue", Helvetica, Arial, default; margin: 3em 5em; }
+h1 { font-size: 3em; /* 48px */ font-weight: bold; color: #000; }
+h2 { font-size: 2em; margin-bottom: .75em; /* 24px */ }
+h3 { font-size: 1.5em; margin: 1em 0; /* 24px */ }
+h4 { font-size: 1em; margin-bottom: .75em; }
+a { color: blue; white-space: nowrap; }
+a:hover { text-decoration: none; }
+ul { padding: 0; float: left; }
+ul li { float: left; margin: 0; padding: 0; border: none; display: inline-block; margin-bottom: .75em; margin-right: .5em; }
+/*p { margin: 1.5em auto; padding: .75em; background-color: #EFD279; text-align: center; font-weight: bold; width: 400px; background: url("img/gradient.png") repeat-x; border-bottom: 1px solid #dc9319; border-right: 1px solid #dc9319; border-top: 1px solid #ffeba8; border-left: 1px solid #ffeba8; }*/
+p { margin: 1.5em auto; /* 24px */ text-align: center; font-weight: bold; }
+/*p a { color: inherit; }*/
+em { font-weight: bold; }
+.style { width: 30%; float: left; }
+.style.middle { margin: 0 5%; }
+.code { clear: left; }
+.flickr { padding-left: 1.5em; background: url("img/flickr.ico") no-repeat 0 center; }
+.quora { padding-left: 1.5em; background: url("img/quora.png") no-repeat 0 center; }
+.hunch { padding-left: 1.5em; background: url("img/hunch.ico") no-repeat 0 center; }
+iframe { border: 2px solid #ccc; overflow-y: auto; width: 100%; height: 200px; }
+.footnote { color: #999; font-size: small; }
+.quiet { color: #999;}
+pre { background-color: #1E1E1E; color: white; padding: .75em 1em; border: 2px solid #ccc; }
+pre .comment { color: #527249; font-style: italic; }
+pre .element,
+pre .js .function { color: #EDD343; }
+pre .sign { color: #49556E; }
+pre .attr-name,
+pre .js .constant { color: #B06520; }
+pre .attr-value { color: #A57C5C; }
+pre .value { color: white; }
+pre .js .attr-name { color: #2EB43B; }
+pre .js .param { color: #72A5A8; }

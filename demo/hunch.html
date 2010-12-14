@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<meta charset="utf-8">
+	
+	<title>Hunch style demo of Tag</title>
+	
+	<link href="../tag.ico" rel="shortcut icon">
+	
+	<meta name="author" content="Georges Duverger">	
+	<meta name="description" content="Flickr style demo of Tag">
+	<meta name="keywords" content="hunch, style, demo, tag, jquery, plugin, edit, tags, tag cloud, tagcloud">
+	
+	<link rel="stylesheet" href="http://yui.yahooapis.com/2.8.1/build/reset/reset-min.css">
+	<link rel="stylesheet" href="hunch.css">
+	
+</head>
+<body>
+	
+	<div class="header">
+		<h3>Tags</h3>
+		<a href="#" class="edit-tags">Edit</a>
+	</div>
+	
+	<div class="tags">
+		<span class="tag">aggregators</span>
+		<span class="tag"><a href="#">wikis</a></span>
+		<span class="tag"><a href="#">folksonomy</a></span>
+		<span class="tag">user centered</span>
+		<span class="tag">joy of use</span>
+		<span class="tag"><a href="#">blogs</a></span>
+		<span class="tag">participation</span>
+		<span class="tag">six degrees</span>
+		<span class="tag"><a href="#">usability</a></span>
+		<span class="tag last">widgets</span>
+	</div>
+	
+	<!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+	<!-- http://html5boilerplate.com/ -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script>!window.jQuery && document.write('<script src="jquery-1.4.2.min.js"><\/script>')</script>
+	
+	<script src="../jquery.tag.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script>
+	$(document).ready(function() {
+		$(".tags").tag({
+			noDelete: true,
+			tagTemplate: "<span class='tag'>",
+			editTagsSelector: ".edit-tags",
+			doneEditingElement: "<a href='#' class='done-editing'>Done</a>",
+			removeElement: "<a href='#' class='remove-tag'>x</a>",
+			addElement: "<button class='add'>Add</button>",
+			saveTagCallback: function( tag ) { $(".last").removeClass("last"); $(".tag:last").addClass("last"); return true; },
+			removeTagCallback: function( tag ) { $(".last").removeClass("last"); $(".tag:last").addClass("last"); return true; }
+		});
+	});
+	</script>
+	
+</body>
+</html>
