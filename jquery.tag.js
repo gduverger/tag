@@ -55,7 +55,7 @@
 			autoCompleteData: false,
 			
 			removeTagCallback: function( tag ) { return true; },
-			saveTagCallback: function( tag, selector, tags, settings ) { return true; }
+			saveTagCallback: function( tag, selector ) { return true; }
 		};
 	
 	$.fn.extend({
@@ -72,6 +72,10 @@
 			})
 			
 			return this;
+		},
+		
+		addTag: function( value ) {
+			alert( value );
 		},
 		
 		addAsTag: function( tags, options ) {
@@ -196,7 +200,7 @@
 					$(this.addElement).hide();
 					$(this.removeLink).show();
 					$(this).addClass( settings.editModeClass ); // EDIT MODE
-				} else if ( settings.saveTagCallback( this, selector, tags, settings ) ) {
+				} else if ( settings.saveTagCallback( this, selector ) ) {
 					$(this.valueElement).text( this.newValue ).show();
 					$(this.inputField).hide();
 					$(this.addElement).hide();
