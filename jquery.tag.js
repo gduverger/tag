@@ -55,7 +55,7 @@
 			autoCompleteData: false,
 			
 			removeTagCallback: function( tag ) { return true; },
-			saveTagCallback: function( tag ) { return true; }
+			saveTagCallback: function( tag, selector, tags, settings ) { return true; }
 		};
 	
 	$.fn.extend({
@@ -112,7 +112,7 @@
 				if ( !this.addElement ) {
 					this.addElement = $(settings.addElement).appendTo( this ).hide().click(function( event ) {
 						if ( event.preventDefault ) { event.preventDefault(); } else { event.returnValue = false; }
-						$(tag).saveTag( tags, settings );
+						$(tag).saveTag( selector, tags, settings );
 						createNewTag( selector, tags, settings );
 					});
 				}
@@ -138,7 +138,7 @@
 					$(tag.inputField).keypress(function( e ) {
 						var code = (e.keyCode ? e.keyCode : e.which);
 						if ( code == KEY.enter || code == settings.separator ) { // Enter or Comma
-							$(tag).saveTag( tags, settings );
+							$(tag).saveTag( selector, tags, settings );
 							createNewTag( selector, tags, settings );
 							return false;
 						}
@@ -170,7 +170,7 @@
 			});
 		},
 		
-		saveTag: function( tags, options ) {
+		saveTag: function( selector, tags, options ) {
 			var settings = $.extend( {}, DEFAULTS, options );
 			return this.each(function() {
 				// this.newValue = $(this.inputField).val();
@@ -196,7 +196,7 @@
 					$(this.addElement).hide();
 					$(this.removeLink).show();
 					$(this).addClass( settings.editModeClass ); // EDIT MODE
-				} else if ( settings.saveTagCallback( this ) ) {
+				} else if ( settings.saveTagCallback( this, selector, tags, settings ) ) {
 					$(this.valueElement).text( this.newValue ).show();
 					$(this.inputField).hide();
 					$(this.addElement).hide();
@@ -248,7 +248,7 @@
 		
 		// Switches to view mode
 		$(selector).children().each(function() {
-			if ( this.inputField ) { $(this).saveTag( tags, settings ); }
+			if ( this.inputField ) { $(this).saveTag( selector, tags, settings ); }
 			$(this.removeLink).hide();
 			$(this).removeClass( settings.editModeClass ); // EDIT MODE
 		});
@@ -269,6 +269,8 @@
 		// Edit the tag
 		// Done after the callback so the focus will work
 		$(tag).editTag( selector, tags, settings );
+		
+		return tag;
 	}
 	
 	// Array Remove - By John Resig (MIT Licensed)
