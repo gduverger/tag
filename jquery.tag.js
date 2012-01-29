@@ -1,7 +1,7 @@
 /*!
  * Tag, the jQuery plugin to edit tag
  * by Georges Duverger
- * http://simplicityengineer.com/
+ * http://gduverger.com/
  */
 
 /* !
